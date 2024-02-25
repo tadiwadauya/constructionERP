@@ -16,11 +16,23 @@ return new class extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->string('paynumber',8)->unique();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('job_title')->nullable();
+            $table->string('address');
             $table->string('email')->unique();
+            $table->string('mobile')->nullable();
+            $table->string('extension')->nullable();
+            $table->string('speeddial', 10)->nullable();
+            $table->string('department')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->boolean('activated')->default(false);
+            $table->string('account_created_by');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
