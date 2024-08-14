@@ -12,6 +12,7 @@
         "laravel/tinker": "^2.7",
         "laravel/ui": "^4.4",
         "laravelcollective/html": "^6.4",
+        "nwidart/laravel-modules": "^9.0",
         "spatie/laravel-permission": "^6.3"
     },
     "require-dev": {

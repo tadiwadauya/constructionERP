@@ -20,12 +20,15 @@ return new class extends Migration
             $table->string('first_name')->nullable();
             $table->string('last_name')->nullable();
             $table->string('job_title')->nullable();
-            $table->string('address');
+            $table->string('address')->nullable();
             $table->string('email')->unique();
             $table->string('mobile')->nullable();
             $table->string('extension')->nullable();
             $table->string('speeddial', 10)->nullable();
             $table->string('department')->nullable();
+            $table->string('leave_days')->nullable();
+            $table->string('Salary')->nullable();
+            $table->string('hire_date')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->boolean('activated')->default(false);

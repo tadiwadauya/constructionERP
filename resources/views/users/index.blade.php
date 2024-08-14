@@ -18,15 +18,23 @@
 <table class="table table-bordered">
     <tr>
         <th>No</th>
-        <th>Name</th>
+        <th>Username</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Employee Number</th>
         <th>Email</th>
         <th>Roles</th>
+        <th>Department</th>
+        <th>Job Title</th>
         <th width="280px">Action</th>
     </tr>
 @foreach ($data as $key => $user)
     <tr>
         <td>{{ ++$i }}</td>
         <td>{{ $user->name }}</td>
+        <td>{{ $user->first_name }}</td>
+        <td>{{ $user->last_name }}</td>
+        <td>{{ $user->paynumber }}</td>
         <td>{{ $user->email }}</td>
         <td>
             @if(!empty($user->getRoleNames()))
@@ -35,6 +43,8 @@
                 @endforeach
             @endif
         </td>
+        <td>{{ $user->department}}</td>
+        <td>{{ $user->job_title}}</td>
         <td>
             <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
             <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
